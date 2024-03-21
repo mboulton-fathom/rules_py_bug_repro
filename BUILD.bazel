@@ -1,0 +1,14 @@
+load("@aspect_rules_py//py:defs.bzl", new_py_binary = "py_binary")
+load("@rules_python//python:defs.bzl", old_py_binary = "py_binary")
+
+old_py_binary(
+    name = "old",
+    srcs = [":main.py"],
+    deps = [":dldfk"],
+)
+
+new_py_binary(
+    name = "new",
+    srcs = [":main.py"],
+    deps = [":dldfk"],
+)
